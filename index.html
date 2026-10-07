@@ -524,27 +524,31 @@
 
             <div id="contact-container">
                 <!--Form Container-->
-                <div id="contact-form-container" class="column contact-container">
+                <form id="contact-form-container" class="column contact-container" name="contact" method="POST" action="/" data-netlify="true" netlify-honeypot="bot-field">
+                    <input type="hidden" name="form-name" value="contact">
+                    <div hidden>
+                        <label>Leave this field empty: <input name="bot-field" tabindex="-1" autocomplete="off"></label>
+                    </div>
                     <div id="contact-name-input" class="input-container column">
                         <div class="row">
                             <label for="contact-name-input-field">Name :</label>
                             <span class="error-label hide">Please enter your name.</span>
                         </div>
-                        <input id="contact-name-input-field" tabindex="-1">
+                        <input id="contact-name-input-field" name="name" tabindex="-1">
                     </div>
                     <div id="contact-email-input" class="input-container column">
                         <div class="row">
                             <label for="contact-email-input-field">Email :</label>
                             <span class="error-label hide">Please enter a valid email address.</span>
                         </div>
-                        <input id="contact-email-input-field" type="email" tabindex="-1">
+                        <input id="contact-email-input-field" name="email" type="email" tabindex="-1">
                     </div>
                     <div id="contact-message-input" class="input-container column">
                         <div class="row">
                             <label for="contact-message-input-field">Message :</label>
                             <span class="error-label hide">Please enter your message.</span>
                         </div>
-                        <textarea id="contact-message-input-field" tabindex="-1"></textarea>
+                        <textarea id="contact-message-input-field" name="message" tabindex="-1"></textarea>
                     </div>
                     <div class="row" id="contact-button-container">
                         <!--Social Icons-->
@@ -565,7 +569,7 @@
                             Submit
                         </div>
                     </div>
-                </div>
+                </form>
 
                 <!--Loading Container-->
                 <div id="contact-loading-container" class="center contact-container hide">
